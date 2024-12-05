@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension method="upgrade" type="plugin" group="content">
+    <name>PLG_CONTENT_VIMEOAPI</name>
+    <version>1.0.0</version>
+    <description>PLG_CONTENT_VIMEOAPI_DESC</description>
+    <author>Mike Economou</author>
+    <creationDate>15/11/2024</creationDate>
+    <copyright>(C) 2024 Mike Economou</copyright>
+    <license>GNU General Public License version 2 or later</license>
+    <namespace path="src">My\Plugin\Content\Vimeoapi</namespace>
+    
+    <files>
+        <folder plugin="vimeoapi">services</folder>
+        <folder>src</folder>
+        <folder>tmpl</folder>
+        <folder>css</folder>
+        <filename>index.html</filename>
+    </files>
+
+    <languages folder="language">
+        <language tag="en-GB">en-GB/en-GB.plg_content_vimeoapi.ini</language>
+        <language tag="en-GB">en-GB/en-GB.plg_content_vimeoapi.sys.ini</language>
+    </languages>
+
+    <config>
+        <fields name="params">
+            <fieldset name="basic">
+                <field
+                    name="app_token"
+                    type="text"
+                    label="PLG_CONTENT_VIMEOAPI_APP_TOKEN_LABEL"
+                    description="PLG_CONTENT_VIMEOAPI_APP_TOKEN_DESC" 
+                     required="true"/>
+                <field 
+                    name="client_identifier" 
+                    type="text" 
+                    label="PLG_CONTENT_VIMEOAPI_APP_ID_LABEL" 
+                    description="PLG_CONTENT_VIMEOAPI_APP_ID_DESC" 
+                    required="true"/>
+                <field
+                    name="autoplay"
+                    type="radio"
+                    label="PLG_CONTENT_VIMEOAPI_AUTOPLAY_LABEL"
+                    description="PLG_CONTENT_VIMEOAPI_AUTOPLAY_DESC"
+                    default=""
+                    >
+                    <option value="">PLG_CONTENT_VIMEOAPI_UNSET</option>
+                    <option value="1">Yes</option>
+                    <option value="0">No</option>
+                </field>
+                <field
+                    name="muted"
+                    type="radio"
+                    label="PLG_CONTENT_VIMEOAPI_AUTOMUTE_LABEL"
+                    description="PLG_CONTENT_VIMEOAPI_AUTOMUTE_DESC"
+                    default=""
+                    >
+                    <option value="">PLG_CONTENT_VIMEOAPI_UNSET</option>
+                    <option value="1">Yes</option>
+                    <option value="0">No</option>
+                </field>
+                <field
+                    name="autopause"
+                    type="radio"
+                    label="PLG_CONTENT_VIMEOAPI_AUTOPAUSE_LABEL"
+                    description="PLG_CONTENT_VIMEOAPI_AUTOPAUSE_DESC"
+                    default=""
+                    >
+                    <option value="">PLG_CONTENT_VIMEOAPI_UNSET</option>
+                    <option value="1">Yes</option>
+                    <option value="0">No</option>
+                </field>
+                <field
+                    name="loop"
+                    type="radio"
+                    label="PLG_CONTENT_VIMEOAPI_LOOP_LABEL"
+                    description="PLG_CONTENT_VIMEOAPI_LOOP_DESC"
+                    default="">
+                    <option value="">PLG_CONTENT_VIMEOAPI_UNSET</option>
+                    <option value="1">Yes</option>
+                    <option value="0">No</option>
+                </field>
+                <field
+                    name="controls"
+                    type="radio"
+                    label="PLG_CONTENT_VIMEOAPI_CONTROLS_LABEL"
+                    description="PLG_CONTENT_VIMEOAPI_CONTROLS_DESC"
+                    default="">
+                    <option value="">PLG_CONTENT_VIMEOAPI_UNSET</option>
+                    <option value="1">Yes</option>
+                    <option value="0">No</option>
+                </field>
+                <field
+                    name="microdata"
+                    type="radio"
+                    label="PLG_CONTENT_VIMEOAPI_MICRODATA_LABEL"
+                    description="PLG_CONTENT_VIMEOAPI_MICRODATA_DESC"
+                    default="1"
+                    >
+                    <option value="1">Yes</option>
+                    <option value="0">No</option>
+                </field>
+                <field
+                    name="responsive"
+                    type="radio"
+                    label="PLG_CONTENT_VIMEOAPI_RESPONSIVE_LABEL"
+                    description="PLG_CONTENT_VIMEOAPI_RESPONSIVE_DESC"
+                    default="1"
+                    >
+                    <option value="1">Yes</option>
+                    <option value="0">No</option>
+                </field>
+                <field
+                    name="loadcss"
+                    type="radio"
+                    label="PLG_CONTENT_VIMEOAPI_LOAD_CSS_LABEL"
+                    description="PLG_CONTENT_VIMEOAPI_LOAD_CSS_DESC"
+                    default="1"
+                    >
+                    <option value="1">Yes</option>
+                    <option value="0">No</option>
+                </field>
+                <field name="position" type="list" label="PLG_CONTENT_VIMEOAPI_POSITION_LABEL" description="PLG_CONTENT_VIMEOAPI_POSITION_DESC" default ="">
+                    <option value="">PLG_CONTENT_VIMEOAPI_DISPLAY_IN_PLACE</option>
+                    <option value="after_title">PLG_CONTENT_VIMEOAPI_DISPLAY_AFTER_TITLE</option>
+                    <option value="before_content">PLG_CONTENT_VIMEOAPI_DISPLAY_BEFORE_DISPLAY</option>
+                    <option value="after_content">PLG_CONTENT_VIMEOAPI_DISPLAY_AFTER_DISPLAY</option>
+                </field>
+                <field name="template" 
+                    type="filelist" default="default.php" 
+                    label="PLG_CONTENT_VIMEOAPI_TEMPLATE_LABEL" 
+                    description="PLG_CONTENT_VIMEOAPI_TEMPLATE_DESC" 
+                    directory="plugins/content/vimeoapi/tmpl" filter="*.php" exclude="" stripext="" />
+                <field name="iframe_attrs" 
+                    type="text" 
+                    label="PLG_CONTENT_VIMEOAPI_IFRAME_ATTRS_LABEL" 
+                    description="PLG_CONTENT_VIMEOAPI_IFRAME_ATTRS_DESC" 
+                    default=""/>
+            </fieldset>
+        </fields>
+    </config>
+</extension>

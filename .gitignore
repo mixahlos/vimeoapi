@@ -1,0 +1,8 @@
+# vscode
+.lh
+.history
+.vscode
+
+*.zip
+*.tgz
+*.tar.gz
